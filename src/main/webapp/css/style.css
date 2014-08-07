@@ -1,0 +1,20 @@
+
+h1 {
+    font-size: 34px;
+}
+
+body {
+    background-color: darkgrey;
+}
+
+.background
+{
+    background-color:#ef7a32;
+}
+
+.errorMsg {
+    background-color: #D97C7C;
+    color: #A30000;
+    display: block;
+    padding: 5px;
+}

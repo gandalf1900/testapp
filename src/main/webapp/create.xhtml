@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+<ui:composition template="/pageTemplate.xhtml">
+    <ui:define name="title">#{resources.createTitle}</ui:define>
+    <ui:define name="heading">#{resources.createHeading}</ui:define>
+    <ui:define name="body">
+        <h:form>
+            <p:panel id="createPanel" header="#{resources.newArticle}" toggleable="true" closable="false" toggleSpeed="500"
+                     onCloseUpdate="growl" closeSpeed="2000" onToggleUpdate="growl" widgetVar="panel">
+
+                <h:panelGrid columns="3" cellpadding="10">
+                    <label>#{resources.title}</label>
+                    <h:inputText size="17" label="Title" id="blogTitle" value="#{blogEntryWizard.blogEntry.title}" required="true"/>
+                    <h:message for="blogTitle" class="errorMsg"/>
+                    <label>#{resources.author}</label>
+                    <h:inputText size="17" label="Author" id="blogAuthor" value="#{blogEntryWizard.blogEntry.author}" required="true"/>
+                    <h:message for="blogAuthor" class="errorMsg"/>
+                    <label>#{resources.content}</label>
+                    <h:inputTextarea label="Content" id="blogContent" value="#{blogEntryWizard.blogEntry.content}" required="true"/>
+                    <h:message for="blogContent" class="errorMsg"/>
+                    <h:commandButton title="#{resources.save}" value="#{resources.save}" action="#{blogEntryWizard.saveBlogEntry()}"/>
+                </h:panelGrid>
+            </p:panel>
+        </h:form>
+    </ui:define>
+</ui:composition>
+</html>
