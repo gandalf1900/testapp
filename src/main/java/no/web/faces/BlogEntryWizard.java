@@ -2,7 +2,11 @@ package no.web.faces;
 
 import no.web.model.BlogEntry;
 import no.web.service.BlogEntryService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.List;
+import javax.annotation.PostConstruct;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -10,6 +14,8 @@ import javax.inject.Named;
 @Named
 @RequestScoped
 public class BlogEntryWizard {
+
+    private static final Logger log = LoggerFactory.getLogger(BlogEntryWizard.class);
 
     @Inject
     private BlogEntryService blogEntryService;
@@ -36,4 +42,14 @@ public class BlogEntryWizard {
     public void delete(BlogEntry blogEntry) {
         blogEntryService.deleteBlogEntry(blogEntry);
     }
+
+    @PostConstruct
+    public void initialize() {
+        log.info("blogs init");
+    }
+
+    public void init() {
+        System.out.println("test seam faces init action");
+    }
+
 }
