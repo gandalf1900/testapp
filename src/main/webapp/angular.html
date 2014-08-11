@@ -1,0 +1,18 @@
+<!doctype html>
+<html ng-app>
+<head>
+    <title>Hello AngularJS</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.js"></script>
+    <script src="resources/js/hello.js"></script>
+</head>
+
+<body>
+<div id="blogdiv" ng-controller="blogs">
+    <p>blog ID is {{scope.blogs.id}}</p>
+    <p>blog title is {{blogs.title}}</p>
+    <p>blog content is {{blogs.content}}</p>
+    <p>blog author is {{blogs.author}}</p>
+    <p>blog created is {{blogs.created}}</p>
+</div>
+</body>
+</html>
