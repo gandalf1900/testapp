@@ -11,4 +11,6 @@ public interface BlogRepository {
     public List<BlogEntry> findBlogEntries();
 
     public void deleteBlogEntry(BlogEntry blogEntry);
+
+    public void deleteAll();
 }

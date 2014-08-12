@@ -29,4 +29,8 @@ public class BlogEntryService {
     public void deleteBlogEntry(BlogEntry blogEntry) {
         blogRepository.deleteBlogEntry(blogEntry);
     }
+
+    public void deleteAll() {
+        blogRepository.deleteAll();
+    }
 }

@@ -34,4 +34,10 @@ public class JpaBlogRepository implements BlogRepository {
         blogEntry = em.merge(blogEntry);
         em.remove(blogEntry);
     }
+
+    @Override
+    public void deleteAll() {
+        System.out.println("** deleteAll");
+
+    }
 }

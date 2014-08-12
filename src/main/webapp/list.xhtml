@@ -21,6 +21,7 @@
     </ui:define>
     <ui:define name="body">
         <h:form>
+
             <p:commandButton title="#{resources.newArticle}" value="#{resources.newArticle}" action="create"/>
             <br/>
             <hr/>
@@ -34,8 +35,9 @@
                         <h:outputText value="#{resources.author}: #{entry.author}"/>
                         <h:panelGroup id="panelGroup">
                             <h:outputText value="#{entry.content}"/>
-                            <p:contextMenu for="panelGroup">
-                                <p:menuitem value="#{resources.delete}" actionListener="#{blogEntryWizard.delete(entry)}" update="@form"/>
+                            <p:contextMenu>
+                                <p:menuitem value="#{resources.delete}" actionListener="#{blogEntryWizard.delete(entry)}" update="@form" icon="ui-icon-close"/>
+                                <p:menuitem value="#{resources.deleteAll}" actionListener="#{blogEntryWizard.deleteAll()}" update="@form" icon="ui-icon-close"/>
                             </p:contextMenu>
                         </h:panelGroup>
                         <f:facet name="footer">
@@ -45,6 +47,9 @@
                     <hr/>
                 </ui:repeat>
             </p:panel>
+
+
+
         </h:form>
     </ui:define>
 </ui:composition>
