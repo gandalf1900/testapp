@@ -9,7 +9,10 @@ import org.slf4j.LoggerFactory;
 import javax.inject.Inject;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
+import javax.ws.rs.core.Response;
+import java.util.ArrayList;
 import java.util.List;
 
 @Path("blogs")
@@ -25,6 +28,8 @@ public class BlogResource {
     @NoCache
     @Path("all")
     public List<BlogEntry> getAllBlogEntries() {
+
+        System.out.println("************* getAllBlogEntries");
         log.info("getAllBlogEntries");
         long timestamp = System.currentTimeMillis();
         List<BlogEntry> blogEntries = blogRepository.findBlogEntries();
@@ -42,5 +47,21 @@ public class BlogResource {
         log.info("getAllBlogEntries took "+ l.toString()+" ms.");
 
         return blogEntries;
+    }
+
+    @GET
+    @Path("books/fiction")
+    public List getAllFiction() {
+
+        System.out.println("************* getAllFiction");
+        return new ArrayList<>(59);
+    }
+
+    @GET
+    @Path("{tiv:\\d\\d\\d}")
+    public List test(@PathParam("tiv") String tiv) {
+
+        System.out.println("************* test, tiv = " +tiv);
+        return new ArrayList<>(59);
     }
 }
