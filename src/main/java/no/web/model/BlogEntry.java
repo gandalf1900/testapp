@@ -23,6 +23,9 @@ public class BlogEntry implements Serializable {
     @Temporal(TemporalType.TIMESTAMP)
     private Date created = new Date();
 
+    public BlogEntry() {
+    }
+
     @PrePersist
     private void onCreate() {
         created = new Date();

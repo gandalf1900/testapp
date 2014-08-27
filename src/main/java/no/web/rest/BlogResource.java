@@ -5,15 +5,13 @@ import no.web.model.BlogEntry;
 import org.jboss.resteasy.annotations.cache.NoCache;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
 import javax.inject.Inject;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
+import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Path("blogs")
 @Produces("application/json")
@@ -50,6 +48,46 @@ public class BlogResource {
     }
 
     @GET
+    @NoCache
+    @Path("blog/{blogId}")
+    public BlogEntry getBlogById(@PathParam("blogId") String blogId) {
+
+        System.out.println("************* getAllBlogEntries");
+        log.info("getAllBlogEntries");
+        long timestamp = System.currentTimeMillis();
+        Optional<BlogEntry> blogEntry = blogRepository.findBlogById(Long.parseLong(blogId));
+
+        long timeMillis = System.currentTimeMillis();
+        Long l = timeMillis - timestamp;
+
+        log.info("getAllBlogEntries took "+ l.toString()+" ms.");
+
+        if (blogEntry.isPresent()) {
+            return blogEntry.get();
+        } else {
+            throw new WebApplicationException(404);
+        }
+    }
+
+    @GET
+    @NoCache
+    @Path("blog/{blogName}")
+    public List<BlogEntry> getBlogByName(@PathParam("blogName") String blogName) {
+
+        System.out.println("************* getAllBlogEntries");
+        log.info("getAllBlogEntries");
+        long timestamp = System.currentTimeMillis();
+        List<BlogEntry> blogEntries = blogRepository.findBlogEntries();
+
+        long timeMillis = System.currentTimeMillis();
+        Long l = timeMillis - timestamp;
+
+        log.info("getAllBlogEntries took "+ l.toString()+" ms.");
+
+        return blogEntries;
+    }
+
+    @GET
     @Path("books/fiction")
     public List getAllFiction() {
 
@@ -64,4 +102,17 @@ public class BlogResource {
         System.out.println("************* test, tiv = " +tiv);
         return new ArrayList<>(59);
     }
+
+    @POST
+    @Path("/post")
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response newBlog(BlogEntry blogEntry) {
+        System.out.println("** newBlog created: "+blogEntry);
+
+        String s = "blogEntry done : " + blogEntry;
+
+        return Response.status(201).entity(s).build();
+
+    }
+
 }
