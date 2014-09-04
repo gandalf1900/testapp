@@ -7,7 +7,7 @@ import org.jboss.resteasy.client.jaxrs.ResteasyWebTarget;
 import org.junit.Ignore;
 import org.junit.Test;
 
-import javax.ws.rs.client.Entity;
+import javax.persistence.Entity;
 import javax.ws.rs.core.Response;
 
 public class TestBlog {
@@ -18,10 +18,6 @@ public class TestBlog {
     @Test
     @Ignore
     public void should_create_blog() {
-        BlogEntry blogEntry = new BlogEntry();
-        ResteasyClient client = new ResteasyClientBuilder().build();
-        ResteasyWebTarget target = client.target("REST_ENDPOINT"+"SERVICE");
-        Response response =  target.request().post(Entity.entity(blogEntry, "application/json"));
-        System.out.println(response);
+
     }
 }

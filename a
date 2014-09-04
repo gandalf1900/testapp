@@ -1,0 +1,53 @@
+[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building testapp Maven Webapp 1.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-dependency-plugin:2.8:tree (default-cli) @ testapp ---
+[INFO] no.web:testapp:war:1.0-SNAPSHOT
+[INFO] +- junit:junit:jar:4.11:test
+[INFO] |  \- org.hamcrest:hamcrest-core:jar:1.3:test
+[INFO] +- org.easytesting:fest-assert:jar:1.4:test
+[INFO] |  \- org.easytesting:fest-util:jar:1.1.6:test
+[INFO] +- org.apache.commons:commons-math:jar:2.2:compile
+[INFO] +- org.jboss.resteasy:resteasy-client:jar:3.0.8.Final:provided
+[INFO] +- org.slf4j:slf4j-api:jar:1.7.5:provided
+[INFO] +- com.google.guava:guava:jar:16.0.1:compile
+[INFO] +- javax.faces:jsf-api:jar:2.1:compile
+[INFO] +- org.primefaces:primefaces:jar:5.0:compile
+[INFO] +- javax.enterprise:cdi-api:jar:1.0-SP4:provided
+[INFO] |  +- org.jboss.spec.javax.interceptor:jboss-interceptors-api_1.1_spec:jar:1.0.0.Final:provided
+[INFO] |  \- javax.inject:javax.inject:jar:1:provided
+[INFO] +- org.jboss.seam.faces:seam-faces:jar:3.0.0.Alpha3:compile
+[INFO] |  +- org.jboss.seam.faces:seam-faces-api:jar:3.0.0.Alpha3:compile
+[INFO] |  +- org.jboss.seam.international:seam-international:jar:3.0.0.Alpha1:compile
+[INFO] |  |  +- joda-time:joda-time:jar:1.6:compile
+[INFO] |  |  \- com.ocpsoft:ocpsoft-pretty-time:jar:1.0.6:compile
+[INFO] |  +- org.jboss.seam.international:seam-international-api:jar:3.0.0.Alpha1:compile
+[INFO] |  \- org.jboss.weld:weld-extensions:jar:1.0.0.Alpha2:compile
+[INFO] +- org.jboss.spec.javax.annotation:jboss-annotations-api_1.1_spec:jar:1.0.0.Final:provided
+[INFO] +- org.jboss.spec.javax.ws.rs:jboss-jaxrs-api_1.1_spec:jar:1.0.0.Final:provided
+[INFO] +- org.hibernate.javax.persistence:hibernate-jpa-2.0-api:jar:1.0.1.Final:provided
+[INFO] +- org.jboss.spec.javax.ejb:jboss-ejb-api_3.1_spec:jar:1.0.1.Final:provided
+[INFO] +- org.jboss.resteasy:resteasy-jaxrs:jar:3.0.8.Final:provided
+[INFO] |  +- org.jboss.resteasy:jaxrs-api:jar:3.0.8.Final:provided
+[INFO] |  +- javax.activation:activation:jar:1.1:provided
+[INFO] |  +- org.apache.httpcomponents:httpclient:jar:4.2.1:provided
+[INFO] |  |  +- org.apache.httpcomponents:httpcore:jar:4.2.1:provided
+[INFO] |  |  +- commons-logging:commons-logging:jar:1.1.1:provided
+[INFO] |  |  \- commons-codec:commons-codec:jar:1.6:provided
+[INFO] |  +- commons-io:commons-io:jar:2.1:provided
+[INFO] |  \- net.jcip:jcip-annotations:jar:1.0:provided
+[INFO] \- org.jboss.resteasy:resteasy-jackson-provider:jar:3.0.8.Final:test
+[INFO]    +- org.codehaus.jackson:jackson-core-asl:jar:1.9.12:test
+[INFO]    +- org.codehaus.jackson:jackson-mapper-asl:jar:1.9.12:test
+[INFO]    +- org.codehaus.jackson:jackson-jaxrs:jar:1.9.12:test
+[INFO]    \- org.codehaus.jackson:jackson-xc:jar:1.9.12:test
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 1.321 s
+[INFO] Finished at: 2014-09-04T09:53:03+02:00
+[INFO] Final Memory: 14M/309M
+[INFO] ------------------------------------------------------------------------
