@@ -10,10 +10,7 @@ import org.jboss.resteasy.client.ProxyFactory;
 import org.jboss.resteasy.plugins.providers.RegisterBuiltin;
 import org.jboss.resteasy.plugins.providers.jackson.ResteasyJacksonProvider;
 import org.jboss.resteasy.spi.ResteasyProviderFactory;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
+import org.junit.*;
 
 import javax.inject.Inject;
 import javax.ws.rs.core.Response;
@@ -50,6 +47,7 @@ public class EmployeeResourceTest {
 	}
 	
 	@Test
+    @Ignore
 	public void getAll() {
 
         try {
@@ -74,6 +72,7 @@ public class EmployeeResourceTest {
 	}
 	
 	@Test
+    @Ignore
 	public void add() {
 
         ClientResponse<Employee> response = (ClientResponse<Employee>) resource.add(createFrodo());
